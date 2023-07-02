@@ -21,7 +21,7 @@ public class TextBoxTest extends BaseTest {
     private String errorColorFieldBorder;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         textBoxPage = new TextBoxPage();
         sidebar = new Sidebar();
@@ -32,7 +32,7 @@ public class TextBoxTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void userCanSubmitAllData() {
+    public void userCanSubmitAllData() {
         waitForClickable(textBoxPage.submitButton);
         fullName = excelReader.getStringData("Text Box", 1, 0);
         validEmail = excelReader.getStringData("Text Box", 1, 1);
@@ -54,7 +54,7 @@ public class TextBoxTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCannotSubmitDataWithInvalidEmail() {
+    public void userCannotSubmitDataWithInvalidEmail() {
         fullName = excelReader.getStringData("Text Box", 1, 0);
         invalidEmail = excelReader.getStringData("Text Box", 1, 2);
         currentAddress = excelReader.getStringData("Text Box", 1, 3);

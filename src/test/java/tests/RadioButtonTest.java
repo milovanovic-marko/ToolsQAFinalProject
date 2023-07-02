@@ -14,7 +14,7 @@ public class RadioButtonTest extends BaseTest {
     private RadioButtonPage radioButtonPage;
 
     @BeforeMethod
-    private void setUpPage() {
+    public void setUpPage() {
         homepagePage = new HomepagePage();
         sidebar = new Sidebar();
         radioButtonPage = new RadioButtonPage();
@@ -28,7 +28,7 @@ public class RadioButtonTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void userCanClickOnYesRadioButton() {
+    public void userCanClickOnYesRadioButton() {
         waitForClickable(radioButtonPage.yesRadio);
         radioButtonPage.clickOnYesRadio();
         waitForVisibility(radioButtonPage.confirmationElement);
@@ -38,7 +38,7 @@ public class RadioButtonTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCanClickOnImpressiveRadioButton() {
+    public void userCanClickOnImpressiveRadioButton() {
         waitForClickable(radioButtonPage.impressiveRadio);
         radioButtonPage.clickOnImpressiveRadio();
         waitForVisibility(radioButtonPage.confirmationElement);
@@ -48,7 +48,7 @@ public class RadioButtonTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void userCanClickOnNoRadioButton() {
+    public void userCanClickOnNoRadioButton() {
         waitForVisibility(radioButtonPage.noRadio);
         radioButtonPage.clickOnNoRadio();
 

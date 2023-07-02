@@ -14,7 +14,7 @@ public class ToolTipsTest extends BaseTest {
     private ToolTipsPage toolTipsPage;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         sidebar = new Sidebar();
         toolTipsPage = new ToolTipsPage();
@@ -25,7 +25,7 @@ public class ToolTipsTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void afterHoveringOverHoverMeToSeeButtonToolTipAppears() {
+    public void afterHoveringOverHoverMeToSeeButtonToolTipAppears() {
         String buttonToolTipText = "You hovered over the Button";
         waitForVisibility(toolTipsPage.hoverMeToSeeButton);
 
@@ -36,7 +36,7 @@ public class ToolTipsTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void afterHoveringOverHoverMeToSeeFieldToolTipAppears() {
+    public void afterHoveringOverHoverMeToSeeFieldToolTipAppears() {
         String fieldToolTipText = "You hovered over the text field";
         waitForVisibility(toolTipsPage.hoverMeToSeeField);
 
@@ -47,7 +47,7 @@ public class ToolTipsTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void afterHoveringOverContraryWordToolTipAppears() {
+    public void afterHoveringOverContraryWordToolTipAppears() {
         String contraryWordToolTipText = "You hovered over the Contrary";
         waitForVisibility(toolTipsPage.contraryWord);
 
@@ -58,7 +58,7 @@ public class ToolTipsTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void afterHoveringOverSectionNumberToolTipAppears() {
+    public void afterHoveringOverSectionNumberToolTipAppears() {
         String sectionNumberToolTipText = "You hovered over the 1.10.32";
         waitForVisibility(toolTipsPage.sectionNumber);
 

@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     private String invalidPassword;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         bookStorePage = new BookStorePage();
         loginPage = new LoginPage();
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void userCanLogInWithValidCredentials() {
+    public void userCanLogInWithValidCredentials() {
         loginPageURL = excelReader.getStringData("URL", 1, 1);
         validUsername = excelReader.getStringData("Login", 1, 0);
         validPassword = excelReader.getStringData("Login", 1, 1);
@@ -49,7 +49,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCannotLogInWithInvalidCredentials() {
+    public void userCannotLogInWithInvalidCredentials() {
         homepagePage.clickOnBookStoreApplicationCard();
         waitForClickable(bookStorePage.loginButton);
         bookStorePage.clickOnLoginButton();

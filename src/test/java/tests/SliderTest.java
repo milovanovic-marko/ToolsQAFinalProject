@@ -14,7 +14,7 @@ public class SliderTest extends BaseTest {
     private SliderPage sliderPage;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         sliderPage = new SliderPage();
         sidebar = new Sidebar();
@@ -25,7 +25,7 @@ public class SliderTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void verifyThatSliderDefaultValueIsSetTo25() {
+    public void verifyThatSliderDefaultValueIsSetTo25() {
         String sliderDefaultValue = "25";
         waitForVisibility(sliderPage.slider);
         waitForVisibility(sliderPage.sliderValueBox);
@@ -34,7 +34,7 @@ public class SliderTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCanSetSliderTo100Percent() {
+    public void userCanSetSliderTo100Percent() {
         String expectedValue = "100";
         waitForVisibility(sliderPage.slider);
         waitForVisibility(sliderPage.sliderValueBox);
@@ -45,7 +45,7 @@ public class SliderTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void userCanSetSliderTo0Percent() {
+    public void userCanSetSliderTo0Percent() {
         String expectedValue = "0";
         waitForVisibility(sliderPage.slider);
         waitForVisibility(sliderPage.sliderValueBox);
@@ -56,7 +56,7 @@ public class SliderTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void userCannotSetSliderAbove100Percent() {
+    public void userCannotSetSliderAbove100Percent() {
         String expectedValue = "100";
         waitForVisibility(sliderPage.slider);
         waitForVisibility(sliderPage.sliderValueBox);
@@ -67,7 +67,7 @@ public class SliderTest extends BaseTest {
     }
 
     @Test(priority = 50)
-    private void userCannotSetSliderBellow0Percent() {
+    public void userCannotSetSliderBellow0Percent() {
         String expectedValue = "0";
         waitForVisibility(sliderPage.slider);
         waitForVisibility(sliderPage.sliderValueBox);

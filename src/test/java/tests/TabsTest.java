@@ -14,7 +14,7 @@ public class TabsTest extends BaseTest {
     private TabsPage tabsPage;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         sidebar = new Sidebar();
         tabsPage = new TabsPage();
@@ -25,13 +25,13 @@ public class TabsTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void verifyThatDefaultActiveTabIsWhatTab() {
+    public void verifyThatDefaultActiveTabIsWhatTab() {
         waitForVisibility(tabsPage.whatTab);
         Assert.assertTrue(tabsPage.isTabActive(tabsPage.whatTab));
     }
 
     @Test(priority = 20)
-    private void userCanClickOnOriginTab() {
+    public void userCanClickOnOriginTab() {
         waitForVisibility(tabsPage.originTab);
         Assert.assertFalse(tabsPage.isTabActive(tabsPage.originTab));
         tabsPage.clickOnOriginTab();
@@ -39,7 +39,7 @@ public class TabsTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void userCanClickOnUseTab() {
+    public void userCanClickOnUseTab() {
         waitForVisibility(tabsPage.useTab);
         Assert.assertFalse(tabsPage.isTabActive(tabsPage.useTab));
         tabsPage.clickOnUseTab();
@@ -47,7 +47,7 @@ public class TabsTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void userCanClickOnMoreTab() {
+    public void userCanClickOnMoreTab() {
         waitForVisibility(tabsPage.moreTab);
         Assert.assertFalse(tabsPage.isTabActive(tabsPage.moreTab));
         tabsPage.clickOnMoreTab();
@@ -55,7 +55,7 @@ public class TabsTest extends BaseTest {
     }
 
     @Test(priority = 50)
-    private void userCanClickOnWhatTabAfterClickingOnOriginTab() {
+    public void userCanClickOnWhatTabAfterClickingOnOriginTab() {
         userCanClickOnOriginTab();
         Assert.assertFalse(tabsPage.isTabActive(tabsPage.whatTab));
         tabsPage.clickOnWhatTab();

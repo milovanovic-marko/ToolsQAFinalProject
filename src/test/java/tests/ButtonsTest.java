@@ -14,7 +14,7 @@ public class ButtonsTest extends BaseTest {
     private ButtonsPage buttonsPage;
 
     @BeforeMethod
-    private void setUpPage() {
+    public void setUpPage() {
         homepagePage = new HomepagePage();
         sidebar = new Sidebar();
         buttonsPage = new ButtonsPage();
@@ -28,7 +28,7 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void userCanClickOnDoubleClickButton() {
+    public void userCanClickOnDoubleClickButton() {
         waitForClickable(buttonsPage.doubleClickButton);
         doubleClick(buttonsPage.doubleClickButton);
         waitForVisibility(buttonsPage.doubleClickMsg);
@@ -38,7 +38,7 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCanClickOnRightClickButton() {
+    public void userCanClickOnRightClickButton() {
         waitForClickable(buttonsPage.rightClickButton);
         rightClick(buttonsPage.rightClickButton);
         waitForVisibility(buttonsPage.rightClickMsg);
@@ -48,7 +48,7 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void userCanClickOnSingleClickButton() {
+    public void userCanClickOnSingleClickButton() {
         buttonsPage.clickOnClickMeButton();
         waitForVisibility(buttonsPage.singleClickMsg);
 
@@ -57,14 +57,14 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void userCanClickOnAllButtons() {
+    public void userCanClickOnAllButtons() {
         userCanClickOnDoubleClickButton();
         userCanClickOnRightClickButton();
         userCanClickOnSingleClickButton();
     }
 
     @Test(priority = 50)
-    private void userCannotActivateDoubleClickButtonWithSingleClick() {
+    public void userCannotActivateDoubleClickButtonWithSingleClick() {
         waitForClickable(buttonsPage.doubleClickButton);
         buttonsPage.doubleClickButton.click();
 
@@ -72,7 +72,7 @@ public class ButtonsTest extends BaseTest {
     }
 
     @Test(priority = 50)
-    private void userCannotActivateRightClickButtonWithLeftClick() {
+    public void userCannotActivateRightClickButtonWithLeftClick() {
         waitForClickable(buttonsPage.rightClickButton);
         buttonsPage.rightClickButton.click();
 

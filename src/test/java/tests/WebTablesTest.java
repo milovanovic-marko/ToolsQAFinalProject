@@ -23,7 +23,7 @@ public class WebTablesTest extends BaseTest {
     private String borderColorProperty = "border-color";
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         webTablesPage = new WebTablesPage();
         sidebar = new Sidebar();
@@ -34,7 +34,7 @@ public class WebTablesTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void userCanAddNewRecordToTable() {
+    public void userCanAddNewRecordToTable() {
         webTablesPage.deleteAllEntries();
         int j = 0;
 
@@ -70,7 +70,7 @@ public class WebTablesTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCannotSubmitBlankFields() {
+    public void userCannotSubmitBlankFields() {
         webTablesPage.deleteAllEntries();
         errorColorField = "rgb(220, 53, 69)";
 
@@ -89,7 +89,7 @@ public class WebTablesTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void userCanUpdateData() {
+    public void userCanUpdateData() {
         webTablesPage.deleteAllEntries();
         addOneRecordToTheWebTables();
 
@@ -119,7 +119,7 @@ public class WebTablesTest extends BaseTest {
         Assert.assertEquals(department, webTablesPage.cellText(5));
     }
 
-    private void addOneRecordToTheWebTables() {
+    public void addOneRecordToTheWebTables() {
         webTablesPage.clickOnAddButton();
         waitForVisibility(webTablesPage.registrationForm);
 

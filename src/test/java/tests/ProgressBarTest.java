@@ -17,7 +17,7 @@ public class ProgressBarTest extends BaseTest {
     private String expectedStopButtonValue = "Stop";
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         sidebar = new Sidebar();
         progressBarPage = new ProgressBarPage();
@@ -28,7 +28,7 @@ public class ProgressBarTest extends BaseTest {
     }
 
     @Test(priority = 10)
-    private void verifyThatProgressDefaultValueIs0() {
+    public void verifyThatProgressDefaultValueIs0() {
         expectedValue = "0";
         waitForVisibility(progressBarPage.progressBar);
 
@@ -37,7 +37,7 @@ public class ProgressBarTest extends BaseTest {
     }
 
     @Test(priority = 20)
-    private void userCanStopProgressBar() throws InterruptedException {
+    public void userCanStopProgressBar() throws InterruptedException {
         String currentProgressValue;
         verifyThatProgressDefaultValueIs0();
 
@@ -54,7 +54,7 @@ public class ProgressBarTest extends BaseTest {
     }
 
     @Test(priority = 30)
-    private void progressBarCanLoadTo100Percent() {
+    public void progressBarCanLoadTo100Percent() {
         expectedValue = "100";
         progressBarPage.clickOnStartStopButton();
         waitForVisibility(progressBarPage.fullProgressBar);
@@ -65,7 +65,7 @@ public class ProgressBarTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void userCanResetFullProgressTo0() {
+    public void userCanResetFullProgressTo0() {
         progressBarCanLoadTo100Percent();
         expectedValue = "0";
 

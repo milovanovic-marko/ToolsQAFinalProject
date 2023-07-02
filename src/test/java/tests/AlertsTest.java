@@ -19,7 +19,7 @@ public class AlertsTest extends BaseTest {
     private String alertMessage;
 
     @BeforeMethod
-    private void pageSetUp() {
+    public void pageSetUp() {
         homepagePage = new HomepagePage();
         alertsPage = new AlertsPage();
         sidebar = new Sidebar();
@@ -32,7 +32,7 @@ public class AlertsTest extends BaseTest {
     @Description("When the user clicks on the 'Click Me' button located on the right side of the copy 'Click Button to see the alert', " +
             "an alert appears with a copy 'You clicked a button'.")
     @Test(priority = 10)
-    private void userCanRemoveAlertAfterClickingOnAlertButton() {
+    public void userCanRemoveAlertAfterClickingOnAlertButton() {
         alertsPage.clickOnAlertButton();
 
         wait.until(ExpectedConditions.alertIsPresent());
@@ -46,7 +46,7 @@ public class AlertsTest extends BaseTest {
     @Description("When the user clicks on the 'Click Me' button located on the right side of the copy " +
             "'On button click, alert will appear after 5 seconds', an alert appears with a copy 'This alert appeared after 5 seconds'.")
     @Test(priority = 20)
-    private void userCanRemoveAlertThatAppearsAfter5Sec() {
+    public void userCanRemoveAlertThatAppearsAfter5Sec() {
         alertsPage.clickOnTimerAlertButton();
         wait.until(ExpectedConditions.alertIsPresent());
 
@@ -60,7 +60,7 @@ public class AlertsTest extends BaseTest {
     @Description("When the user clicks on the 'Click Me' button located on the right side of the copy " +
             "'On button click, confirm box will appear', an alert appears with a copy 'Do you confirm action?'.")
     @Test(priority = 30)
-    private void userCanConfirmAlertMessage() {
+    public void userCanConfirmAlertMessage() {
         alertsPage.clickOnConfirmBoxButton();
         wait.until(ExpectedConditions.alertIsPresent());
 
@@ -73,7 +73,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test(priority = 40)
-    private void userCanCancelAlertMessage() {
+    public void userCanCancelAlertMessage() {
         alertsPage.clickOnConfirmBoxButton();
         wait.until(ExpectedConditions.alertIsPresent());
 
@@ -89,7 +89,7 @@ public class AlertsTest extends BaseTest {
     @Description("When the user clicks on the 'Click Me' button located on the right side of the copy " +
             "'On button click, prompt box will appear', an alert appears with a copy 'Please enter your name'.")
     @Test(priority = 50)
-    private void userCanSendNameInAlert() {
+    public void userCanSendNameInAlert() {
         for (int i = 1; i <= excelReader.getLastRow("Alerts"); i++) {
             String name = excelReader.getStringData("Alerts", i, 2);
             alertsPage.clickOnPromptButton();
